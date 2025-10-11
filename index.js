@@ -50,7 +50,7 @@ app.use('/api/v1/sliders', sliderRoutes);
 app.use('/api/v1/blogs', blogRoutes);
 
 // Health check endpoint
-app.get('/api/v1/health', (req, res) => {
+app.get('`/api/v1/health`', (req, res) => {
   res.status(200).json({
     success: true,
     message: 'Server is running successfully',
