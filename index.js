@@ -5,18 +5,18 @@ import dotenv from 'dotenv';
 import connectDB from './src/config/connection.js';
 
 // Import routes
-import userRoutes from '../backend/src/routes/userRoutes.js';
-import menuRoutes from '../backend/src/routes/menuItemRoutes.js';
-import orderRoutes from '../backend/src/routes/orderRoutes.js';
-import orderItemRoutes from '../backend/src/routes/orderItemRoutes.js';
-import deliveryInfoRoutes from '../backend/src/routes/deliveryInfoRoutes.js';
-import adminRoutes from '../backend/src/routes/adminRoutes.js';
-import contactRoutes from "../backend/src/routes/contactRoutes.js"
-import termsAndConditionsRoutes from "../backend/src/routes/termsAndConditionsRoutes.js";
-import privatePolicyRoutes from "../backend/src/routes/privatePolicyRoutes.js";
-import faqRoutes from "../backend/src/routes/faqRoutes.js";
-import sliderRoutes from '../backend/src/routes/sliderRoutes.js';
-import blogRoutes from '../backend/src/routes/blogRoutes.js';
+import userRoutes from './src/routes/userRoutes.js';
+import menuRoutes from '.src/routes/menuItemRoutes.js';
+import orderRoutes from '.src/routes/orderRoutes.js';
+import orderItemRoutes from '.src/routes/orderItemRoutes.js';
+import deliveryInfoRoutes from '.src/routes/deliveryInfoRoutes.js';
+import adminRoutes from '.src/routes/adminRoutes.js';
+import contactRoutes from ".src/routes/contactRoutes.js"
+import termsAndConditionsRoutes from "./src/routes/termsAndConditionsRoutes.js";
+import privatePolicyRoutes from "./src/routes/privatePolicyRoutes.js";
+import faqRoutes from "./src/routes/faqRoutes.js";
+import sliderRoutes from './src/routes/sliderRoutes.js';
+import blogRoutes from './src/routes/blogRoutes.js';
 
 
 
