@@ -24,10 +24,28 @@ dotenv.config();
 
 const app = express();
 
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:3001",
+  "https://sushi-frontend-main.vercel.app",
+  "https://sushi-frontend-main-azvj.vercel.app"  // <-- your live frontend
+];
+
 // Middleware
+// app.use(cors({
+//   origin: process.env.FRONTEND_URI || 'http://localhost:3000' ,
+//   credentials: true
+// }));
+
 app.use(cors({
-  origin: process.env.FRONTEND_URI || 'http://localhost:3000',
-  credentials: true
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
 }));
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
@@ -50,7 +68,7 @@ app.use('/api/v1/sliders', sliderRoutes);
 app.use('/api/v1/blogs', blogRoutes);
 
 // Health check endpoint
-app.get('`/api/v1/health`', (req, res) => {
+app.get('/api/v1/health', (req, res) => {
   res.status(200).json({
     success: true,
     message: 'Server is running successfully',
