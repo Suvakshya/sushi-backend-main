@@ -17,6 +17,8 @@ import privatePolicyRoutes from "./src/routes/privatePolicyRoutes.js";
 import faqRoutes from "./src/routes/faqRoutes.js";
 import sliderRoutes from './src/routes/sliderRoutes.js';
 import blogRoutes from './src/routes/blogRoutes.js';
+import cartRoutes from './src/routes/cartRoutes.js';
+import translationRoutes from './src/routes/translationRoutes.js';
 
 
 
@@ -71,6 +73,8 @@ app.use('/api/v1/order-items', orderItemRoutes);
 app.use('/api/v1/delivery-info', deliveryInfoRoutes);
 app.use('/api/v1/sliders', sliderRoutes);
 app.use('/api/v1/blogs', blogRoutes);
+app.use('/api/v1/cart', cartRoutes);
+app.use('/api/v1/translate', translationRoutes);
 
 // Health check endpoint
 app.get('/api/v1/health', (req, res) => {
