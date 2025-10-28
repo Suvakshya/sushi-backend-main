@@ -19,6 +19,13 @@ import sliderRoutes from './src/routes/sliderRoutes.js';
 import blogRoutes from './src/routes/blogRoutes.js';
 import cartRoutes from './src/routes/cartRoutes.js';
 import translationRoutes from './src/routes/translationRoutes.js';
+import stripeRoutes from './src/routes/stripeRoutes.js';
+import receiptsRoutes from './src/routes/receipts.js';
+import admincontactRoutes from './src/routes/adminContactRoutes.js';
+import applicantRoutes from './src/routes/applicantRoutes.js';
+import logoLinkRoutes from './src/routes/logoLinkRoutes.js';
+
+
 
 
 
@@ -60,6 +67,9 @@ app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 // Database connection
 connectDB();
 
+
+
+
 // Routes
 app.use('/api/v1/admin', adminRoutes);
 app.use('/api/v1/users', userRoutes);
@@ -75,6 +85,13 @@ app.use('/api/v1/sliders', sliderRoutes);
 app.use('/api/v1/blogs', blogRoutes);
 app.use('/api/v1/cart', cartRoutes);
 app.use('/api/v1/translate', translationRoutes);
+app.use('/api/v1/stripe', stripeRoutes);
+app.use('/api/v1/receipts', receiptsRoutes);
+app.use('/api/v1/admincontact', admincontactRoutes);
+app.use('/api/v1/applicants', applicantRoutes);
+app.use('/api/v1/logo', logoLinkRoutes);
+
+
 
 // Health check endpoint
 app.get('/api/v1/health', (req, res) => {
